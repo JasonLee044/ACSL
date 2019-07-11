@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 public class C1JR_Code {
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args){
 			
 		try {
 			Scanner in = new Scanner(new File("0102c1jr.in"));
@@ -24,13 +24,12 @@ public class C1JR_Code {
 					value = multiple(value) * 12;
 				}
 				
-				value %=26;
-				if(value == 0 ){
-					value = 26;
+				while(value > 26) {
+					value -= 26;
 				}
 				
 				
-				ans =(char)( value + 'A' - 1);
+				ans = value!= 0 ?(char)( value + 'A' - 1) : '#';
 				System.out.println(ans);
 				
 				
